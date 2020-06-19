@@ -1,0 +1,28 @@
+{
+  "name": "easyprint",
+  "version": "1.0.0",
+  "description": "EasyPrint, une interface web pratique pour contrôler son imprimante 3D à distance grâce à un Raspberry.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Falkos1/EasyPrint.git"
+  },
+  "keywords": [
+    "3D",
+    "Print",
+    "Raspberry"
+  ],
+  "author": "Tristan Bournique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Falkos1/EasyPrint/issues"
+  },
+  "homepage": "https://github.com/Falkos1/EasyPrint#readme",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  }
+}
