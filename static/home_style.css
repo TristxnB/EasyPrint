@@ -13,6 +13,9 @@ html, body{
     padding-bottom: 15px;
     padding-left: 5px;
     padding-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav h1, .nav p{
@@ -33,4 +36,33 @@ html, body{
 
 .profil img:hover{
     cursor: pointer;
+}
+
+.nav button{
+    height: 5em;
+    width: 5em;
+}
+
+.buttons{
+    margin-right: 10px;
+}
+
+i{
+    font-size: xx-large;
+}
+
+#console{
+    resize: none;
+    width: 100%;
+}
+
+.console{
+    width: 95%
+}
+
+.console_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

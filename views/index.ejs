@@ -6,6 +6,8 @@
     <title>EasyPrint - Accueil</title>
     <link rel="stylesheet" href="/static/home_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c7ea7d9c0d.js" crossorigin="anonymous"></script>
+    <script src="/static/js/ejs.min.js"></script>
 </head>
 <body>
     <div class="nav">
@@ -16,7 +18,19 @@
                 <p>Ton imprimante : <%= printer %> </p>
             </div>
         </div>
+        <div class="buttons">
+            <form action="/connect" method="GET">
+                <button><i class="fas fa-plug"></i></button>
+            </form>
+            
+        </div>
     </div>
-
+    
+    <div class="console_wrapper">
+        <div class="console">
+            <h3 id="console_title">Console :</h3>
+            <textarea name="console" id="console" rows="10" readonly ><%= console %> </textarea>
+        </div>
+    </div>
 </body>
 </html>

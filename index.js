@@ -6,6 +6,9 @@ var path = require("path");
 var optionsFolder = path.join(__dirname, "options")
 var optionsFile = path.join(optionsFolder, "options.json")
 
+var printerStatus = false;
+var consoleText = "Bienvenue dans la console !\n \n";
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -19,7 +22,9 @@ app.get('/', function(req, res) {
     }else{
         res.render("index", {
             nickname: JSON.parse(fs.readFileSync(optionsFile)).nickname,
-            printer: JSON.parse(fs.readFileSync(optionsFile)).printer
+            printer: JSON.parse(fs.readFileSync(optionsFile)).printer,
+            printerStatus: printerStatus,
+            console: consoleText
         })
     }
 })
@@ -44,6 +49,17 @@ app.post('/install', function(req, res) {
         res.render('error', {
             err: "EasyPrint semble déjà être installé 🤔 Essayes de supprimer le dossier 'options'..."
         })
+    }
+})
+
+app.get('/connect', function(req, res){
+    if(printerStatus){
+        consoleText = consoleText + "L'imprimante est déjà connectée !\n"
+        res.redirect('/')
+    } else{
+        printerStatus = true;
+        consoleText = consoleText + ("L'imprimante est connecté !\n")
+        res.redirect('/')
     }
 })
 
