@@ -1,0 +1,28 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: "Comfortaa";
+}
+
+.nav{
+    background-color: #222222;
+    padding: 15px;
+}
+
+.nav h1, .nav p{
+    margin: 0;
+    color: white;
+}
+
+.profil{
+    display: flex;
+    align-items: center;
+}
+
+.profil img{
+    margin-right: 5px;
+    border-radius: 100%;
+}
