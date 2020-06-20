@@ -28,4 +28,9 @@ html, body{
 .profil img{
     margin-right: 5px;
     border-radius: 100%;
+    width: 64px;
+}
+
+.profil img:hover{
+    cursor: pointer;
 }
