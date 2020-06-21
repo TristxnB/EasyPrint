@@ -16,10 +16,16 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname));
 
 app.get('/', function(req, res) {
+    
     if(!fs.existsSync(optionsFolder)){
         console.log("EasyPrint isn't installed.")
         res.redirect('/install')
     }else{
+        if(!fs.existsSync(optionsFile) || JSON.parse(fs.readFileSync(optionsFile)).nickname == "" || JSON.parse(fs.readFileSync(optionsFile)).printer == ""){
+            res.render('error', {
+                err: "Les fichiers de configurations sont vides ! Supprime le fichier 'options' et actualise."
+            })
+        }
         res.render("index", {
             nickname: JSON.parse(fs.readFileSync(optionsFile)).nickname,
             printer: JSON.parse(fs.readFileSync(optionsFile)).printer,
